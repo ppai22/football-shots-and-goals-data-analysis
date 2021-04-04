@@ -1,5 +1,6 @@
 library(tidyverse)
 
+source('D:/R/WORKING/football/constants.R')
 source('D:/R/WORKING/football/data_load.R')
 
 
@@ -10,7 +11,7 @@ FetchData <- function(team.name, season=NULL) {
   team.df <- filter(df, HomeTeam == team.name | AwayTeam == team.name)
   
   if (!is.null(season)) {
-    if (is.element(season, c("2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19"))) {
+    if (is.element(season, kSeasons)) {
       team.df <- filter(team.df, Season == season)
     }
   }
