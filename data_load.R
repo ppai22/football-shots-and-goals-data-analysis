@@ -32,3 +32,46 @@ LoadData <- function() {
   return(full.data)
   
 }
+
+
+LoadDataForSeasons <- function(seasons = c(), reference.data = NULL) {
+  
+  if (is.null(reference.data)) {
+    
+    reference.data <- LoadData()
+    
+  }
+  
+  data <- subset(reference.data, Season %in% seasons)
+  
+  return(data)
+}
+
+
+LoadDataForTeam <- function(teams = c(), reference.data = NULL) {
+  
+  if (is.null(reference.data)) {
+    
+    reference.data <- LoadData()
+    
+  }
+  
+  data <- subset(reference.data, (HomeTeam %in% teams | AwayTeam %in% teams))
+  
+  return(data)
+}
+
+
+LoadDataBetweenTeams <- function(teams = c(), reference.data = NULL) {
+  
+  if (is.null(reference.data)) {
+    
+    reference.data <- LoadData()
+    
+  }
+  
+  data <- subset(reference.data, (HomeTeam %in% teams & AwayTeam %in% teams))
+  
+  return(data)
+}
+

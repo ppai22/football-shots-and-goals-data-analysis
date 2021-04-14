@@ -38,10 +38,23 @@ FetchData <- function(team.name, season=NULL) {
   full.shots.goals.data <- c(avg.goals, avg.shots.on.target, avg.shots)
 
   team.data <- data.frame(team.name,
-                          avg.shots.home - avg.shots.on.target.home - avg.goals.home,
-                          avg.shots.on.target.home - avg.goals.home,
-                          avg.goals.home)
+                          avg.shots.home,
+                          avg.shots.on.target.home,
+                          avg.goals.home,
+                          avg.shots.away,
+                          avg.shots.on.target.away,
+                          avg.goals.away)
   
   return(team.data)
   
+}
+
+
+FetchDataTeamForSeasons <- function(team, seasons = c()) {
+  
+  team.data <- LoadDataForTeam(teams = c(team))
+  data <- LoadDataForSeasons(reference.data = team.data, seasons = seasons)
+  
+  return(data)
+    
 }
