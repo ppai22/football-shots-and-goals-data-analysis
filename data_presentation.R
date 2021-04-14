@@ -1,7 +1,7 @@
 library(tidyverse)
 
-source('D:/R/WORKING/football/data_load.R')
-source('D:/R/WORKING/football/data_fetching.R')
+source('data_load.R')
+source('data_fetching.R')
 
 
 
@@ -42,4 +42,3 @@ PlotPercentageShotsAndGoals <- function(season) {
     labs(title = paste("Percentage Shots On Target, Off Target and Goals - Season ", season))
   
 }
-

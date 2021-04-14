@@ -1,7 +1,7 @@
 library(tidyverse)
 
-source('D:/R/WORKING/football/constants.R')
-source('D:/R/WORKING/football/data_load.R')
+source('constants.R')
+source('data_load.R')
 
 
 FetchData <- function(team.name, season=NULL) {

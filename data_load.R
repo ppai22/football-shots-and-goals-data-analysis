@@ -1,6 +1,6 @@
 library(tidyverse)
 
-source('D:/R/WORKING/football/constants.R')
+source('constants.R')
 
 LoadData <- function() {
   
