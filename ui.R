@@ -16,7 +16,7 @@ main_content <- mainPanel(
 
 visualization_panel <- tabPanel(
   "Plots",
-  titlePanel("Percentage shots, goals and off target shots"),
+  titlePanel("Percentage Goals, Saved Shots on Target and Shots Off Target"),
   p("Select season"),
   sidebarLayout(
     sidebar_content, main_content

@@ -36,9 +36,10 @@ PlotPercentageShotsAndGoals <- function(season) {
     gather(variable, value, PcShotsOffTgt:PcGoals)
   
   data.home %>%
-    ggplot(aes(y = Team, x = value, fill=variable, label = paste(as.character(round(value * 100)), "%"))) +
-    geom_bar(stat = "identity") +
-    geom_text(size = 3, position = position_stack(vjust = 0.5)) +
-    labs(title = paste("Percentage Shots On Target, Off Target and Goals - Season ", season))
+    ggplot(aes(y = Team, x = value, fill = variable, label = paste(as.character(round(value * 100)), "%"))) +
+    geom_col(colour = "black", position = position_stack(reverse = TRUE)) +
+    geom_text(size = 3, position = position_stack(reverse = TRUE, vjust = 0.5)) +
+    scale_fill_brewer(palette = "Pastel2") +
+    labs(title = paste("Percentage Goals, Saved Shots on Target and Shots Off Target - Season ", season))
   
 }
